@@ -148,6 +148,8 @@ def configure(conf):
 	if conf.env.DEST_OS == "win32":
 		conf.env.append_unique('LINKFLAGS', ['-static', '-static-libgcc'])
 		conf.env.append_unique('LIB', ['setupapi'])
+	elif conf.env.DEST_OS == "openbsd":
+		check_poll(conf)
 	else:
 		check_poll(conf)
 		conf.check_cc(lib='dl', uselib_store='DL', mandatory=True)
