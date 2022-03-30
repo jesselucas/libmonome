@@ -73,6 +73,10 @@ def build(bld):
 	elif bld.env.DEST_OS == "win32":
 		obj("platform/windows.c")
 
+	elif bld.env.DEST_OS == "openbsd":
+		obj("platform/darwin.c")
+		obj("platform/posix.c")
+
 	if bld.env.EMBED_PROTOS:
 		obj("platform/embed.c")
 	#

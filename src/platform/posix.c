@@ -129,7 +129,7 @@ int monome_platform_open(monome_t *monome, const monome_devmap_t *m,
 
 	/* raw output */
 	nt.c_oflag &= ~(OCRNL | ONLCR | ONLRET | ONOCR |
-	                OFILL | OPOST);
+	                 OPOST);
 
 	nt.c_cc[VMIN]  = 0;
 	nt.c_cc[VTIME] = 0;
